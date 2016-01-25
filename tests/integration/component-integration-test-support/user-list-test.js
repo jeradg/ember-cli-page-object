@@ -39,7 +39,7 @@ function isAdmin(selector) {
 }
 
 test('Component contents', function(assert) {
-  assert.expect(8);
+  assert.expect(11);
 
   const page = PageObject.create({
     context: this,
@@ -61,6 +61,7 @@ test('Component contents', function(assert) {
 
   this.set('users', [
     { userName: 'jane', role: 'admin', disabledAnimalPreference: false, admin: true },
+    { userName: 'jolanta', role: 'guest', disabledAnimalPreference: false, admin: false },
     { userName: 'john', role: 'guest', disabledAnimalPreference: true, admin: false }
   ]);
 
@@ -69,13 +70,16 @@ test('Component contents', function(assert) {
   page.users(0).animalPreference.select('Tomsters');
 
   assert.equal(page.title, 'Users');
-  assert.equal(page.users().count, 2);
+  assert.equal(page.users().count, 3);
   assert.ok(page.users(0).isVisible);
   assert.equal(page.users(0).userName, 'jane');
   assert.equal(page.users(0).role, 'admin');
   assert.equal(page.users(0).animalPreference.selected, 'Tomsters');
+  assert.equal(page.users(1).animalPreference.selected, 'Cats');
   assert.ok(page.users(0).isAdmin, 'is not admin');
+  assert.notOk(page.users(1).isAdmin, 'is admin');
   // FIXME: Change this back to the prop version when it works
   // assert.equal(page.users(1).animalPreference.isDisabled, true);
-  assert.equal(page.users(1).animalPreference.disabled, 'disabled');
+  assert.notEqual(page.users(1).animalPreference.disabled, 'disabled');
+  assert.equal(page.users(2).animalPreference.disabled, 'disabled');
 });
