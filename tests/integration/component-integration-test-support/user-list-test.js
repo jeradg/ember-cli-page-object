@@ -4,20 +4,22 @@ import hbs from 'htmlbars-inline-precompile';
 import PageObject from '../../page-object';
 
 const {
+  attribute,
   selectable,
   text,
   collection,
-  isVisible
+  isVisible,
+  hasClass
 } = PageObject;
 
 moduleForComponent('user-list', 'Integration | component integration test support/user list', {
   integration: true
 });
 
-// FIXME: Can't use the global `$` here for integration tests
-function isDisabled(selector) {
-  return $(selector).prop('disabled');
-}
+// FIXME: this doesn't work. It's a prop, not an attr.
+// function isDisabled(selector) {
+//   return attribute('disabled', selector);
+// }
 
 // FIXME: This used to be a `customHelper`. Make sure this still
 // works and is bound to the single item in which it is called.
@@ -25,16 +27,15 @@ function selectBox(selector) {
   return {
     select: selectable(selector),
     selected: text(`option:selected`),
-    isDisabled: isDisabled(selector)
+    //isDisabled: isDisabled(selector)
+    disabled: attribute('disabled', selector)
   };
 }
 
 // FIXME: This used to be a `customHelper`. Make sure this still
 // works and is bound to the single item in which it is called.
 function isAdmin(selector) {
-  return function() {
-    return $(selector).hasClass('admin');
-  };
+  return hasClass('admin', selector);
 }
 
 test('Component contents', function(assert) {
@@ -74,5 +75,7 @@ test('Component contents', function(assert) {
   assert.equal(page.users(0).role, 'admin');
   assert.equal(page.users(0).animalPreference.selected, 'Tomsters');
   assert.ok(page.users(0).isAdmin, 'is not admin');
-  assert.equal(page.users(1).animalPreference.isDisabled, true);
+  // FIXME: Change this back to the prop version when it works
+  // assert.equal(page.users(1).animalPreference.isDisabled, true);
+  assert.equal(page.users(1).animalPreference.disabled, 'disabled');
 });
