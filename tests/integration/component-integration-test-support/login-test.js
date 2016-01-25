@@ -56,26 +56,26 @@ test('Retries login', function(assert) {
 
   this.render(hbs`{{login-form}}`);
 
-  assert.ok(page.notHasError(), 'Page doesn\'t have error');
-  assert.equal(page.title(), 'Login page');
+  assert.ok(page.notHasError, 'Page doesn\'t have error');
+  assert.equal(page.title, 'Login page');
 
   page
-    .form()
+    .form
     .userName('invalid')
     .password('invalid')
     .click();
 
-  assert.ok(page.hasError(), 'Page has error');
-  assert.equal(page.message(), 'Invalid user!');
+  assert.ok(page.hasError, 'Page has error');
+  assert.equal(page.message, 'Invalid user!');
 
   page
-    .form()
+    .form
     .userName('user@example.com')
     .password('secret')
     .click();
 
-  assert.ok(page.notHasError(), 'Page doesn\'t have error');
-  assert.equal(page.message(), 'Valid user!');
+  assert.ok(page.notHasError, 'Page doesn\'t have error');
+  assert.equal(page.message, 'Valid user!');
 });
 
 test('Action chains act like a promise', function(assert) {
@@ -104,10 +104,10 @@ test('Action chains act like a promise', function(assert) {
   this.render(hbs`{{login-form}}`);
 
   page
-    .form()
+    .form
     .userName('invalid')
     .password('invalid')
     .click();
 
-  assert.ok(page.hasError(), 'Page has error');
+  assert.ok(page.hasError, 'Page has error');
 });

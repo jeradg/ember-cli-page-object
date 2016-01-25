@@ -36,7 +36,9 @@ export function clickOnText(selector, options = {}) {
 
       /* global click */
       if (this.context && this.context.$) {
-        this.context.$(fullSelector).click();
+        Ember.run(() => {
+          this.context.$(fullSelector).click();
+        });
       } else {
         click(fullSelector);
       }

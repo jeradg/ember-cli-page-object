@@ -97,7 +97,15 @@ export function buildSelector(node, targetSelector, options) {
 export function findElementWithAssert(node, targetSelector, options) {
   var selector = buildSelector(node, targetSelector, options);
 
-  return findWithAssert(selector);
+  if (node.context && node.context.$) {
+    // TODO: When a context is provided, throw an exception
+    // or give a falsy assertion when there are no matches
+    // for the selector. This will provide consistent behaviour
+    // between acceptance and integration tests.
+    return node.context.$(selector);
+  } else {
+    return findWithAssert(selector);
+  }
 }
 
 /**
@@ -115,7 +123,11 @@ export function findElementWithAssert(node, targetSelector, options) {
 export function findElement(node, targetSelector, options) {
   var selector = buildSelector(node, targetSelector, options);
 
-  return find(selector);
+  if (node.context && node.context.$) {
+    return node.context.$(selector);
+  } else {
+    return find(selector);
+  }
 }
 
 /**

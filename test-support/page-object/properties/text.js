@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import { findElementWithAssert, normalizeText, buildSelector } from '../helpers';
+import { findElementWithAssert, normalizeText } from '../helpers';
 
 var $ = Ember.$;
 
@@ -35,13 +35,7 @@ export function text(selector, options = {}) {
     get() {
       let element;
 
-      if (this.context) {
-        const fullSelector = buildSelector(this, selector, options);
-
-        element = this.context.$(fullSelector);
-      } else {
-        element = findElementWithAssert(this, selector, options);
-      }
+      element = findElementWithAssert(this, selector, options);
 
       if (options.multiple) {
         result = $.map(element, e => normalizeText($(e).text()));

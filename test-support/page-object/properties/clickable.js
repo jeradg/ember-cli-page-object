@@ -26,7 +26,9 @@ export function clickable(selector, options = {}) {
       const fullSelector = buildSelector(this, selector, options);
 
       if (this.context && this.context.$) {
-        this.context.$(fullSelector).click();
+        Ember.run(() => {
+          this.context.$(fullSelector).click();
+        });
       } else {
         click(fullSelector);
       }

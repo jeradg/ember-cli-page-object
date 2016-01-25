@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import { buildSelector } from '../helpers';
 
 /**
@@ -22,9 +23,20 @@ export function fillable(selector, options = {}) {
   return {
     isDescriptor: true,
 
-    value(textToUse) {
-      /* global fillIn */
-      fillIn(buildSelector(this, selector, options), textToUse);
+    value(text) {
+      const fullSelector = buildSelector(this, selector, options);
+
+      if (this.context && this.context.$) {
+        const $el = this.context.$(fullSelector);
+
+        Ember.run(() => {
+          $el.val(text);
+          $el.trigger('input');
+          $el.change();
+        });
+      } else {
+        fillIn(fullSelector, text);
+      }
 
       return this;
     }

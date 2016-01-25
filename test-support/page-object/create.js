@@ -49,13 +49,13 @@ function buildObjectWithContext(context) {
   return function(treeBuilder, target, keyName, value) {
     let object = {};
 
+    if (!target.context) {
+      target.context = context;
+    }
+
     if (keyName !== 'context') {
       // Create child component
       defineProperty(target, keyName, object);
-
-      if (!target.context) {
-        target.context = context;
-      }
 
       if (!value.context) {
         value.context = context;
