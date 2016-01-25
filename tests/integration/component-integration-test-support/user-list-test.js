@@ -4,7 +4,6 @@ import hbs from 'htmlbars-inline-precompile';
 import PageObject from '../../page-object';
 
 const {
-  customHelper,
   selectable,
   text,
   collection
@@ -14,23 +13,23 @@ moduleForComponent('user-list', 'Integration | component integration test suppor
   integration: true
 });
 
-const isDisabled = customHelper(function(selector) {
+function isDisabled(selector) {
   return $(selector).prop('disabled');
-});
+}
 
-const selectBox = customHelper(function() {
+function selectBox() {
   return {
     select: selectable(),
     selected: text(`option:selected`),
     isDisabled: isDisabled()
   };
-});
+}
 
-const isAdmin = customHelper(function(selector) {
+function isAdmin(selector) {
   return function() {
     return $(selector).hasClass('admin');
   };
-});
+}
 
 test('Component contents', function(assert) {
   assert.expect(8);

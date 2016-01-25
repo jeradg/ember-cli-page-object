@@ -23,8 +23,13 @@ export function clickable(selector, options = {}) {
     isDescriptor: true,
 
     value() {
-      /* global click */
-      click(buildSelector(this, selector, options));
+      const fullSelector = buildSelector(this, selector, options);
+
+      if (this.context && this.context.$) {
+        this.context.$(fullSelector).click();
+      } else {
+        click(fullSelector);
+      }
 
       return this;
     }

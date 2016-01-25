@@ -65,6 +65,10 @@ export function collection(definition) {
     isDescriptor: true,
 
     value(index) {
+      if (this.context && definition) {
+        definition.context = this.context;
+      }
+
       if (typeof index === 'number') {
         return generateItem.call(this, index, definition);
       } else {

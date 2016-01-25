@@ -35,7 +35,11 @@ export function clickOnText(selector, options = {}) {
         merge({ contains: textToClick, last: true }, options));
 
       /* global click */
-      click(fullSelector);
+      if (this.context && this.context.$) {
+        this.context.$(fullSelector).click();
+      } else {
+        click(fullSelector);
+      }
 
       return this;
     }

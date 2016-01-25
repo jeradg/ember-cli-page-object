@@ -15,23 +15,44 @@ const {
   text
 } = PageObject;
 
-const Page = PageObject.extend({
-  form: {
-    userName: fillable('#userName'),
-    password: fillable('#password'),
-    click: clickable('.login button'),
-  },
-
-  title: text('.title'),
-  message: text('.message'),
-  hasError: hasClass('is-error', '.login'),
-  notHasError: notHasClass('is-error', '.login')
-});
+// TODO: Re-add this `Page` subclass using `extend` when `extend`
+// support has been added
+//
+// const Page = PageObject.extend({
+//   form: {
+//     userName: fillable('#userName'),
+//     password: fillable('#password'),
+//     click: clickable('.login button'),
+//   },
+// 
+//   title: text('.title'),
+//   message: text('.message'),
+//   hasError: hasClass('is-error', '.login'),
+//   notHasError: notHasClass('is-error', '.login')
+// });
 
 test('Retries login', function(assert) {
   assert.expect(6);
 
-  const page = Page.create({context: this});
+  // TODO: replace the non-DRY `create` with the short version
+  // after `extend` support has been added
+  //
+  // let page = Page.create({context: this});
+  //
+  const page = PageObject.create({
+    context: this,
+
+    form: {
+      userName: fillable('#userName'),
+      password: fillable('#password'),
+      click: clickable('.login button'),
+    },
+
+    title: text('.title'),
+    message: text('.message'),
+    hasError: hasClass('is-error', '.login'),
+    notHasError: notHasClass('is-error', '.login')
+  });
 
   this.render(hbs`{{login-form}}`);
 
@@ -60,7 +81,25 @@ test('Retries login', function(assert) {
 test('Action chains act like a promise', function(assert) {
   assert.expect(1);
 
-  const page = Page.create({context: this});
+  // TODO: replace the non-DRY `create` with the short version
+  // after `extend` support has been added
+  //
+  // let page = Page.create({context: this});
+  //
+  const page = PageObject.create({
+    context: this,
+
+    form: {
+      userName: fillable('#userName'),
+      password: fillable('#password'),
+      click: clickable('.login button'),
+    },
+
+    title: text('.title'),
+    message: text('.message'),
+    hasError: hasClass('is-error', '.login'),
+    notHasError: notHasClass('is-error', '.login')
+  });
 
   this.render(hbs`{{login-form}}`);
 
