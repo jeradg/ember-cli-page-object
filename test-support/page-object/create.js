@@ -1,42 +1,9 @@
 import Ceibo from 'ceibo';
 
-function typeOf(item) {
-  if (item && item.isDescriptor) {
-    return 'descriptor';
-  }
-
-  if (item === null) {
-    return 'null';
-  }
-
-  return typeof(item);
-}
-
-// Cribbed from Ceibo
-function defineProperty(target, keyName, value, getter) {
-  var options = {
-    configurable: true,
-    enumerable: true,
-  };
-
-  if (typeOf(getter) !== 'undefined') {
-    options.get = getter;
-  } else {
-    options.writable = false;
-    options.value = value;
-  }
-
-  Object.defineProperty(target, keyName, options);
-}
-
 function buildDescriptorWithContext(context) {
   // Cribbed from Ceibo
-  return function(treeBuilder, target, key, attr) {
-    if (typeof attr.setup === 'function') {
-      attr.setup(target, key);
-    }
-
-    defineProperty(target, key, attr.value, attr.get);
+  return function(treeBuilder, target, key, value) {
+    Ceibo.defaults.builder.descriptor(treeBuilder, target, key, value);
 
     if (!target.context) {
       target.context = context;
@@ -46,23 +13,17 @@ function buildDescriptorWithContext(context) {
 
 function buildObjectWithContext(context) {
   // Cribbed from Ceibo
-  return function(treeBuilder, target, keyName, value) {
-    let object = {};
-
+  return function(treeBuilder, target, key, value) {
     if (!target.context) {
       target.context = context;
     }
 
-    if (keyName !== 'context') {
-      // Create child component
-      defineProperty(target, keyName, object);
-
+    if (key !== 'context') {
       if (!value.context) {
         value.context = context;
       }
 
-      // Recursion
-      treeBuilder.processNode(value, object, target);
+      Ceibo.defaults.builder.object(treeBuilder, target, key, value);
     }
   };
 }
