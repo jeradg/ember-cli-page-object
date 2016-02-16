@@ -6,7 +6,8 @@ description: >
   addon eases the construction of these objects on your acceptance tests. Works
   with every version of Ember.
 baseurl: ""
-url: "http://ember-cli-page-object.js.org"
+# url: "http://ember-cli-page-object.js.org"
+url: "http://jeradg.github.io/ember-cli-page-object"
 twitter_username: san650
 github_username: san650
 exclude: ["bower_components", "tmp", "node_modules", "tmp_docs"]
