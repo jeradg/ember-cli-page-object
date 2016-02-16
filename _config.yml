@@ -8,7 +8,7 @@ description: >
 baseurl: ""
 # url: "http://ember-cli-page-object.js.org"
 url: "http://jeradg.github.io"
-base_url: "ember-cli-page-object"
+base_url: "/ember-cli-page-object"
 twitter_username: san650
 github_username: san650
 exclude: ["bower_components", "tmp", "node_modules", "tmp_docs"]
