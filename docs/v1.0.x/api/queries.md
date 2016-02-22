@@ -3,6 +3,8 @@ layout: page
 title: Queries
 ---
 
+### Methods
+
 - [attribute](#attribute)
 - [count](#count)
 - [text](#text)
@@ -10,7 +12,7 @@ title: Queries
 
 ## attribute
 
-[test-support/page-object/queries/attribute.js:66-81](https://github.com/jeradg/ember-cli-page-object/blob/67bd0e42148e3dc44ce5d00d45b6bfb04f69016b/test-support/page-object/queries/attribute.js#L66-L81 "Source code on GitHub")
+[test-support/page-object/queries/attribute.js:66-81](https://github.com/jeradg/ember-cli-page-object/blob/e5310a3d642563214536f01aae7211922b009cea/test-support/page-object/queries/attribute.js#L66-L81 "Source code on GitHub")
 
 Returns the value of an attribute from the matched element,
 or an array of values from multiple matched elements.
@@ -77,7 +79,7 @@ Returns **Descriptor**
 
 ## count
 
-[test-support/page-object/queries/count.js:73-85](https://github.com/jeradg/ember-cli-page-object/blob/67bd0e42148e3dc44ce5d00d45b6bfb04f69016b/test-support/page-object/queries/count.js#L73-L85 "Source code on GitHub")
+[test-support/page-object/queries/count.js:73-85](https://github.com/jeradg/ember-cli-page-object/blob/e5310a3d642563214536f01aae7211922b009cea/test-support/page-object/queries/count.js#L73-L85 "Source code on GitHub")
 
 Returns the number of elements matched by a selector.
 
@@ -150,7 +152,7 @@ Returns **Descriptor**
 
 ## text
 
-[test-support/page-object/queries/text.js:67-82](https://github.com/jeradg/ember-cli-page-object/blob/67bd0e42148e3dc44ce5d00d45b6bfb04f69016b/test-support/page-object/queries/text.js#L67-L82 "Source code on GitHub")
+[test-support/page-object/queries/text.js:67-82](https://github.com/jeradg/ember-cli-page-object/blob/e5310a3d642563214536f01aae7211922b009cea/test-support/page-object/queries/text.js#L67-L82 "Source code on GitHub")
 
 Returns text of the element or Array of texts of all matched elements by selector.
 
@@ -217,7 +219,7 @@ Returns **Descriptor**
 
 ## value
 
-[test-support/page-object/queries/value.js:64-79](https://github.com/jeradg/ember-cli-page-object/blob/67bd0e42148e3dc44ce5d00d45b6bfb04f69016b/test-support/page-object/queries/value.js#L64-L79 "Source code on GitHub")
+[test-support/page-object/queries/value.js:64-79](https://github.com/jeradg/ember-cli-page-object/blob/e5310a3d642563214536f01aae7211922b009cea/test-support/page-object/queries/value.js#L64-L79 "Source code on GitHub")
 
 Returns the value of a matched element,
 or an array of values of all matched elements.

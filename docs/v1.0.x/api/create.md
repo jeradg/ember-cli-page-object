@@ -3,11 +3,13 @@ layout: page
 title: Create
 ---
 
+### Methods
+
 - [create](#create)
 
 ## create
 
-[test-support/page-object/create.js:101-107](https://github.com/jeradg/ember-cli-page-object/blob/67bd0e42148e3dc44ce5d00d45b6bfb04f69016b/test-support/page-object/create.js#L101-L107 "Source code on GitHub")
+[test-support/page-object/create.js:101-107](https://github.com/jeradg/ember-cli-page-object/blob/e5310a3d642563214536f01aae7211922b009cea/test-support/page-object/create.js#L101-L107 "Source code on GitHub")
 
 Creates a new PageObject.
 

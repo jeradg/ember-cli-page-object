@@ -3,11 +3,13 @@ layout: page
 title: Collection
 ---
 
+### Methods
+
 - [collection](#collection)
 
 ## collection
 
-[test-support/page-object/collection.js:142-154](https://github.com/jeradg/ember-cli-page-object/blob/67bd0e42148e3dc44ce5d00d45b6bfb04f69016b/test-support/page-object/collection.js#L142-L154 "Source code on GitHub")
+[test-support/page-object/collection.js:142-154](https://github.com/jeradg/ember-cli-page-object/blob/e5310a3d642563214536f01aae7211922b009cea/test-support/page-object/collection.js#L142-L154 "Source code on GitHub")
 
 Creates a component that represents a collection of items. The collection is zero-indexed.
 

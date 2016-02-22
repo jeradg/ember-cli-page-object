@@ -3,6 +3,8 @@ layout: page
 title: Helpers
 ---
 
+### Methods
+
 - [buildSelector](#buildselector)
 - [findElement](#findelement)
 - [findElementWithAssert](#findelementwithassert)
@@ -10,7 +12,7 @@ title: Helpers
 
 ## buildSelector
 
-[test-support/page-object/helpers.js:118-120](https://github.com/jeradg/ember-cli-page-object/blob/67bd0e42148e3dc44ce5d00d45b6bfb04f69016b/test-support/page-object/helpers.js#L118-L120 "Source code on GitHub")
+[test-support/page-object/helpers.js:118-120](https://github.com/jeradg/ember-cli-page-object/blob/e5310a3d642563214536f01aae7211922b009cea/test-support/page-object/helpers.js#L118-L120 "Source code on GitHub")
 
 Builds a CSS selector from a target selector and a PageObject or a node in a PageObject, along with optional parameters.
 
@@ -58,7 +60,7 @@ Returns **string** Fully qualified selector
 
 ## findElement
 
-[test-support/page-object/helpers.js:166-173](https://github.com/jeradg/ember-cli-page-object/blob/67bd0e42148e3dc44ce5d00d45b6bfb04f69016b/test-support/page-object/helpers.js#L166-L173 "Source code on GitHub")
+[test-support/page-object/helpers.js:166-173](https://github.com/jeradg/ember-cli-page-object/blob/e5310a3d642563214536f01aae7211922b009cea/test-support/page-object/helpers.js#L166-L173 "Source code on GitHub")
 
 Returns a jQuery element (can be an empty jQuery result)
 
@@ -77,7 +79,7 @@ Returns **Object** jQuery object
 
 ## findElementWithAssert
 
-[test-support/page-object/helpers.js:140-147](https://github.com/jeradg/ember-cli-page-object/blob/67bd0e42148e3dc44ce5d00d45b6bfb04f69016b/test-support/page-object/helpers.js#L140-L147 "Source code on GitHub")
+[test-support/page-object/helpers.js:140-147](https://github.com/jeradg/ember-cli-page-object/blob/e5310a3d642563214536f01aae7211922b009cea/test-support/page-object/helpers.js#L140-L147 "Source code on GitHub")
 
 Returns a jQuery element matched by a selector built from parameters
 
@@ -96,7 +98,7 @@ Returns **Object** jQuery object
 
 ## normalizeText
 
-[test-support/page-object/helpers.js:183-185](https://github.com/jeradg/ember-cli-page-object/blob/67bd0e42148e3dc44ce5d00d45b6bfb04f69016b/test-support/page-object/helpers.js#L183-L185 "Source code on GitHub")
+[test-support/page-object/helpers.js:183-185](https://github.com/jeradg/ember-cli-page-object/blob/e5310a3d642563214536f01aae7211922b009cea/test-support/page-object/helpers.js#L183-L185 "Source code on GitHub")
 
 Trim whitespaces at both ends and normalize whitespaces inside `text`
 

@@ -3,6 +3,8 @@ layout: page
 title: Actions
 ---
 
+### Methods
+
 - [clickOnText](#clickontext)
 - [clickable](#clickable)
 - [fillable](#fillable)
@@ -10,7 +12,7 @@ title: Actions
 
 ## clickOnText
 
-[test-support/page-object/actions/click-on-text.js:100-116](https://github.com/jeradg/ember-cli-page-object/blob/67bd0e42148e3dc44ce5d00d45b6bfb04f69016b/test-support/page-object/actions/click-on-text.js#L100-L116 "Source code on GitHub")
+[test-support/page-object/actions/click-on-text.js:100-116](https://github.com/jeradg/ember-cli-page-object/blob/e5310a3d642563214536f01aae7211922b009cea/test-support/page-object/actions/click-on-text.js#L100-L116 "Source code on GitHub")
 
 Clicks on an element containing specified text.
 
@@ -90,7 +92,7 @@ Returns **Descriptor**
 
 ## clickable
 
-[test-support/page-object/actions/clickable.js:57-68](https://github.com/jeradg/ember-cli-page-object/blob/67bd0e42148e3dc44ce5d00d45b6bfb04f69016b/test-support/page-object/actions/clickable.js#L57-L68 "Source code on GitHub")
+[test-support/page-object/actions/clickable.js:57-68](https://github.com/jeradg/ember-cli-page-object/blob/e5310a3d642563214536f01aae7211922b009cea/test-support/page-object/actions/clickable.js#L57-L68 "Source code on GitHub")
 
 Clicks elements matched by a selector.
 
@@ -149,7 +151,7 @@ Returns **Descriptor**
 
 ## fillable
 
-[test-support/page-object/actions/fillable.js:67-78](https://github.com/jeradg/ember-cli-page-object/blob/67bd0e42148e3dc44ce5d00d45b6bfb04f69016b/test-support/page-object/actions/fillable.js#L67-L78 "Source code on GitHub")
+[test-support/page-object/actions/fillable.js:67-78](https://github.com/jeradg/ember-cli-page-object/blob/e5310a3d642563214536f01aae7211922b009cea/test-support/page-object/actions/fillable.js#L67-L78 "Source code on GitHub")
 
 Fills in an input matched by a selector.
 
@@ -219,7 +221,7 @@ Returns **Descriptor**
 
 ## visitable
 
-[test-support/page-object/actions/visitable.js:81-97](https://github.com/jeradg/ember-cli-page-object/blob/67bd0e42148e3dc44ce5d00d45b6bfb04f69016b/test-support/page-object/actions/visitable.js#L81-L97 "Source code on GitHub")
+[test-support/page-object/actions/visitable.js:81-97](https://github.com/jeradg/ember-cli-page-object/blob/e5310a3d642563214536f01aae7211922b009cea/test-support/page-object/actions/visitable.js#L81-L97 "Source code on GitHub")
 
 Loads a given route.
 
